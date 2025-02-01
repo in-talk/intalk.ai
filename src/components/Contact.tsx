@@ -1,6 +1,86 @@
-import React from "react";
+import React, { ChangeEvent, FormEventHandler, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { toast, Zoom } from "react-toastify";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    preferredMethod: "",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, } = e.target;
+
+    setFormData({
+      ...formData,
+      [name]:  value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    // const templateParams = {
+    //   from_name: formData.name,
+    //   from_email: formData.email,
+    //   message: formData.message,
+    //   from_phone: formData.phone,
+    //   preferredMethod: formData.preferredMethod,
+    // };
+  
+    // emailjs
+    //   .send(
+    //     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+    //     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+    //     templateParams,
+    //     process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+    //   )
+    //   .then(
+    //     (result) => {
+    //       setFormData({
+    //         name: "",
+    //         email: "",
+    //         message: "",
+    //         phone: "",
+    //         preferredMethod: "",
+    //       });
+    //       setLoading(false);
+    //       toast.success("Message sent successfully", {
+    //         position: "top-center",
+    //         autoClose: 3000,
+    //         hideProgressBar: false,
+    //         closeOnClick: true,
+    //         pauseOnHover: true,
+    //         draggable: true,
+    //         progress: undefined,
+    //         theme: "light",
+    //         transition: Zoom,
+    //       });
+    //     },
+    //     (error) => {
+    //       setLoading(false);
+
+    //       toast.error("Error sending email", {
+    //         position: "top-center",
+    //         autoClose: 3000,
+    //         hideProgressBar: false,
+    //         closeOnClick: true,
+    //         pauseOnHover: true,
+    //         draggable: true,
+    //         progress: undefined,
+    //         theme: "light",
+    //         transition: Zoom,
+    //       });
+    //     }
+    //   );
+  };
+
   return (
     <section className="py-0 md:py-14" id="contact">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -90,66 +170,85 @@ function Contact() {
             <h2 className="text-indigo-600 font-nacelle text-4xl font-semibold leading-10 mb-11">
               Send Us A Message
             </h2>
-            <input
-              type="text"
-              className="w-full h-12 text-gray-600 placeholder-gray-400  shadow-sm bg-transparent text-lg font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-              placeholder="Name"
-            />
-            <input
-              type="text"
-              className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-              placeholder="Email"
-            />
-            <input
-              type="text"
-              className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-              placeholder="Phone"
-            />
-            <div className="mb-10">
-              <h4 className="text-gray-500 text-lg font-nacelle leading-7 mb-4">
-                Preferred method of communication
-              </h4>
-              <div className="flex">
-                <div className="flex items-center mr-11">
-                  <input
-                    id="radio-group-1"
-                    type="radio"
-                    name="radio-group"
-                    className="hidden checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100"
-                  />
-                  <label
-                    htmlFor="radio-group-1"
-                    className="flex items-center cursor-pointer text-gray-500 text-base font-nacelle leading-6"
-                  >
-                    <span className="border border-gray-300 rounded-full mr-2 w-4 h-4  ml-2 "></span>{" "}
-                    Email
-                  </label>
-                </div>
-                <div className="flex items-center">
-                  <input
-                    id="radio-group-2"
-                    type="radio"
-                    name="radio-group"
-                    className="hidden checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100"
-                  />
-                  <label
-                    htmlFor="radio-group-2"
-                    className="flex items-center cursor-pointer text-gray-500 text-base font-nacelle leading-6"
-                  >
-                    <span className="border border-gray-300  rounded-full mr-2 w-4 h-4  ml-2 "></span>{" "}
-                    Phone
-                  </label>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                className="w-full h-12 text-gray-600 placeholder-gray-400  shadow-sm bg-transparent text-lg font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
+                placeholder="Name"
+                name="name"
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
+                placeholder="Email"
+                name="email"
+                onChange={handleChange}
+              />
+              <input
+                type="text"
+                className="w-full h-12 text-gray-600 placeholder-gray-400 shadow-sm bg-transparent text-lg font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
+                placeholder="Phone"
+                name="phone"
+                onChange={handleChange}
+              />
+              <div className="mb-10">
+                <h4 className="text-gray-500 text-lg font-nacelle leading-7 mb-4">
+                  Preferred method of communication
+                </h4>
+                <div className="flex">
+                  <div className="flex items-center mr-11">
+                    <input
+                      id="radio-group-1"
+                      type="radio"
+                      name="preferredMethod"
+                      value="email"
+                      checked={formData.preferredMethod === "email"}
+                      onChange={handleChange}
+                      className="hidden checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100"
+                    />
+                    <label
+                      htmlFor="radio-group-1"
+                      className="flex items-center cursor-pointer text-gray-500 text-base font-nacelle leading-6"
+                    >
+                      <span className="border border-gray-300 rounded-full mr-2 w-4 h-4  ml-2 "></span>{" "}
+                      Email
+                    </label>
+                  </div>
+                  <div className="flex items-center">
+                    <input
+                      id="radio-group-2"
+                      type="radio"
+                      name="preferredMethod"
+                      value="phone"
+                       checked={formData.preferredMethod === "phone"}
+                       onChange={handleChange}
+                      className="hidden checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100"
+                    />
+                    <label
+                      htmlFor="radio-group-2"
+                      className="flex items-center cursor-pointer text-gray-500 text-base font-nacelle leading-6"
+                    >
+                      <span className="border border-gray-300  rounded-full mr-2 w-4 h-4  ml-2 "></span>{" "}
+                      Phone
+                    </label>
+                  </div>
                 </div>
               </div>
-            </div>
-            <input
-              type="text"
-              className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg shadow-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
-              placeholder="Message"
-            />
-            <button className="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-700 hover:bg-indigo-800 bg-indigo-600 shadow-sm">
-              Send
-            </button>
+              <input
+                type="text"
+                className="w-full h-12 text-gray-600 placeholder-gray-400 bg-transparent text-lg shadow-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 mb-10"
+                placeholder="Message"
+                onChange={handleChange}
+                name="message"
+              />
+              <button
+                type="submit"
+                className="w-full h-12 text-white text-base font-semibold leading-6 rounded-full transition-all duration-700 hover:bg-indigo-800 bg-indigo-600 shadow-sm"
+              >
+                Send
+              </button>
+            </form>
           </div>
         </div>
       </div>

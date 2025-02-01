@@ -15,6 +15,8 @@ import About from "../components/About";
 import Workflows from "../components/Workflows";
 import Cta from "../components/Cta";
 import Footer from "../components/ui/Footer";
+import PlayButton from "../components/PlayButton";
+import CallSample from "../components/CallSample";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -59,9 +61,11 @@ export default function Home() {
       <Header />
       <PageIllustration />
       <HeroHome/>
+     <PlayButton />
       <About />
       <WhyAI />
       <AutomateProcess />
+      <CallSample/>
       <Services/>
       <Waves />
       <Workflows />
