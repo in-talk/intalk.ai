@@ -36,9 +36,11 @@ export default function HeroHome() {
           </div>
         </div>
       </div>
+   
       <div data-aos="fade-left" data-aos-duration="2000" className=" h-[500px]">
         <DotLottieReact src="/animations/robot.lottie" loop autoplay />
       </div>
+     
     </section>
   );
 }
