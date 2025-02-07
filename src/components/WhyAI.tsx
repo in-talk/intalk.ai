@@ -13,7 +13,7 @@ export default function WhyAI() {
         )}
       />
       <div className="mx-auto px-4 sm:px-6 ">
-        <div className="border-t pt-12 pb-7 [border-image:linear-gradient(to_right,transparent,theme(colors.slate.400/.25),transparent)1] md:py-10">
+        <div className=" pt-12 pb-7  md:py-10">
           {/* Section header */}
           <div className="mx-auto max-w-3xl py-4 text-center md:py-4">
             <TextAnimate

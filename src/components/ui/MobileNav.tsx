@@ -8,7 +8,9 @@ import Logo from "./Logo";
 
 const navigation = [
   { name: "Home", href: "#", current: true },
+  { name: "Why AI", href: "#whyAi", current: false },
   { name: "About", href: "#about", current: false },
+  { name: "Services", href: "#support", current: false },
   { name: "Features", href: "#features", current: false },
   { name: "Contact us", href: "#contact", current: false },
 ];
@@ -19,7 +21,7 @@ function classNames(...classes: string[]) {
 
 export default function MobileNav() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-transparent">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -41,7 +43,7 @@ export default function MobileNav() {
             <div className="flex shrink-0 items-center">
               <Logo />
             </div>
-            <div className="hidden sm:ml-6 sm:block">
+            <div className="hidden sm:ml-6 sm:block ">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
                   <a
@@ -64,7 +66,7 @@ export default function MobileNav() {
         </div>
       </div>
 
-      <DisclosurePanel className="sm:hidden">
+      <DisclosurePanel className="sm:hidden bg-gray-800">
         <div className="space-y-1 px-2 pt-2 pb-3">
           {navigation.map((item) => (
             <DisclosureButton

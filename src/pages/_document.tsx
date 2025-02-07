@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export const metadata = {
   title: "AI-Powered Calling Bots | Transforming Customer Support 24/7",
@@ -21,6 +22,21 @@ export default function Document() {
       >
         <Main />
         <NextScript />
+        {/* <!--Start of Tawk.to Script--> */}
+        <Script id="chat-integration" type="text/javascript">
+          {`
+                var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+                (function(){
+                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+                s1.async=true;
+                s1.src='https://embed.tawk.to/6710d2962480f5b4f58eef2d/1iacrd840';
+                s1.charset='UTF-8';
+                s1.setAttribute('crossorigin','*');
+                s0.parentNode.insertBefore(s1,s0);
+                })();
+                `}
+        </Script>
+        {/* <!--End of Tawk.to Script--> */}
       </body>
     </Html>
   );

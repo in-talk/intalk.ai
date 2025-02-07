@@ -26,59 +26,59 @@ function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // const templateParams = {
-    //   from_name: formData.name,
-    //   from_email: formData.email,
-    //   message: formData.message,
-    //   from_phone: formData.phone,
-    //   preferredMethod: formData.preferredMethod,
-    // };
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message,
+      from_phone: formData.phone,
+      preferredMethod: formData.preferredMethod,
+    };
   
-    // emailjs
-    //   .send(
-    //     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
-    //     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
-    //     templateParams,
-    //     process.env.NEXT_PUBLIC_EMAILJS_USER_ID
-    //   )
-    //   .then(
-    //     (result) => {
-    //       setFormData({
-    //         name: "",
-    //         email: "",
-    //         message: "",
-    //         phone: "",
-    //         preferredMethod: "",
-    //       });
-    //       setLoading(false);
-    //       toast.success("Message sent successfully", {
-    //         position: "top-center",
-    //         autoClose: 3000,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         theme: "light",
-    //         transition: Zoom,
-    //       });
-    //     },
-    //     (error) => {
-    //       setLoading(false);
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID as string,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+      )
+      .then(
+        (result) => {
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+            phone: "",
+            preferredMethod: "",
+          });
+          setLoading(false);
+          toast.success("Message sent successfully", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Zoom,
+          });
+        },
+        (error) => {
+          setLoading(false);
 
-    //       toast.error("Error sending email", {
-    //         position: "top-center",
-    //         autoClose: 3000,
-    //         hideProgressBar: false,
-    //         closeOnClick: true,
-    //         pauseOnHover: true,
-    //         draggable: true,
-    //         progress: undefined,
-    //         theme: "light",
-    //         transition: Zoom,
-    //       });
-    //     }
-    //   );
+          toast.error("Error sending email", {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Zoom,
+          });
+        }
+      );
   };
 
   return (
@@ -91,7 +91,7 @@ function Contact() {
                 <img
                   src="/images/Ai_calling_bot.png"
                   alt="ContactUs section"
-                  className="w-full h-full md:rounded-l-3xl rounded-3xl bg-blend-multiply bg-indigo-700 object-cover"
+                  className="w-full h-full md:rounded-l-3xl rounded-l-3xl bg-blend-multiply bg-indigo-700 object-cover"
                 />
                 <h1 className="font-nacelle text-2xl font-semibold md:text-4xl text-indigo-200 absolute top-11 left-11">
                   Contact us
@@ -166,7 +166,7 @@ function Contact() {
             </div>
           </div>
 
-          <div className="bg-gray-50 p-5 lg:p-11 md:rounded-r-3xl rounded-3xl">
+          <div className="bg-gray-50 p-5 lg:p-11 md:rounded-r-3xl rounded-r-3xl">
             <h2 className="text-indigo-600 font-nacelle text-4xl font-semibold leading-10 mb-11">
               Send Us A Message
             </h2>

@@ -6,13 +6,13 @@ export default function About() {
       <div className="absolute w-[100%] h-[100%]">
         <div className=" relative flex flex-col  gap-[50px] justify-center items-center z-30 w-[100%] h-[100%] backdrop-blur-sm  rounded-lg  shadow-xl p-12">
           <TextAnimate
-            className="font-nacell text-2xl font-semibold md:text-4xl text-indigo-800"
+            className="font-nacell text-2xl font-semibold md:text-4xl text-indigo-500"
             animation="blurInUp"
             by="character"
           >
             Revolutionizing Call Centers, One AI at a Time
           </TextAnimate>
-          <p className="text-white text-xl md:text-2xl text-center w-full md:w-[55%]">
+          <p className=" text-indigo-200 text-xl md:text-2xl text-center w-full md:w-[55%]">
             Transform your call center operations with advanced AI-driven
             automation. By intelligently managing customer interactions and
             streamlining communication workflows, we enable you to deliver

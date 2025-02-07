@@ -6,17 +6,15 @@ import AutomateProcess from "../components/AutomateProcess";
 import Waves from "../components/ui/Waves";
 import WhyAI from "../components/WhyAI";
 import Services from "../components/Services";
-import Contact from "../components/Contact";
 import Loader from "../components/ui/Loader";
 import Header from "../components/ui/Header";
-import PageIllustration from "../components/Page-illustration";
 import HeroHome from "../components/Hero-home";
 import About from "../components/About";
 import Workflows from "../components/Workflows";
 import Cta from "../components/Cta";
 import Footer from "../components/ui/Footer";
-import PlayButton from "../components/PlayButton";
 import CallSample from "../components/CallSample";
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -50,7 +48,7 @@ export default function Home() {
 
     setTimeout(() => setIsLoading(false), 4000);
   };
-
+ 
   if (isLoading) {
     return <Loader onComplete={handleLoaderComplete} />;
   }
@@ -59,18 +57,15 @@ export default function Home() {
     <>
       <ScrollProgress />
       <Header />
-      <PageIllustration />
       <HeroHome/>
-     <PlayButton />
-      <About />
       <WhyAI />
+      <About />
       <AutomateProcess />
       <CallSample/>
       <Services/>
       <Waves />
       <Workflows />
       <Cta />
-      <Contact/>
       <Footer />
     </>
   );
