@@ -15,7 +15,7 @@ export default function Document() {
           href="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/css/pagedone.css "
           rel="stylesheet"
         />
-         <link rel="icon" type="image/png" href="/favicon.png" />
+         <link rel="icon" sizes="120x120" type="image/png" href="/favicon.png" />
       </Head>
 
       <body
