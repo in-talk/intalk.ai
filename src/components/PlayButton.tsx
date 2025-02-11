@@ -3,14 +3,14 @@ import { useRouter } from 'next/router'
 import React from 'react'
 
 function PlayButton() {
-    const router =useRouter()
+    const router = useRouter()
 
   return (
-    <div className="flex relative justify-center items-center ">
-         <div data-aos="fade-up" data-aos-duration="1000" className=" cursor-pointer absolute -top-[230px]  h-[200px] w-[200px]" onClick={()=>router.push('#callSample')}>
+    <div className="flex justify-center items-center ">
+         <div data-aos="fade-up" data-aos-duration="1000" className=" cursor-pointer h-[150px] w-[150px]" onClick={()=>router.push('#callSample')}>
            <DotLottieReact src="/animations/play.lottie" loop autoplay />
          </div>
-         </div>
+    </div>
   )
 }
 
