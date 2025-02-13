@@ -38,20 +38,14 @@ export default function HeroHome() {
               </p>
 
               <div className="flex justify-center items-center">
-                <div data-aos="fade-right">
-                  <MatrixButton buttonText="Schdeule a demo" />
+                <div data-aos="fade-up">
+                   <PlayButton />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-0 md:left-4 md:bottom-4">
-         <PlayButton />
-      </div>
-
-      
     </section>
   );
 }
