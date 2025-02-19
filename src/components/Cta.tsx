@@ -13,14 +13,14 @@ export default function Cta() {
             <VelocityScroll defaultVelocity={2}>
               The Future of call centers is here.
             </VelocityScroll>
-            <div className="mx-auto md:mt-10  md:gap-5 flex flex-col md:flex-row  gap-2 justify-center">
+            {/* <div className="mx-auto md:mt-10  md:gap-5 flex flex-col md:flex-row  gap-2 justify-center">
               <div data-aos="fade-up" data-aos-delay={800}>
                 <MatrixButton buttonText="Schedule a demo" />
               </div>
               <div data-aos="fade-up" data-aos-delay={900}>
                 <MatrixButton buttonText="Start building" />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

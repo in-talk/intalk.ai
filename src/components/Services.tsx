@@ -10,7 +10,7 @@ export default function Services() {
       </div>
       <div className=" relative flex flex-col  gap-[30px] justify-center items-center md:items-start z-30  w-full md:w-[50%] h-[100%]   rounded-lg  shadow-xl ">
         <TextAnimate
-          className="font-nacelle text-2xl font-semibold md:text-3xl text-indigo-200"
+          className="font-nacelle text-2xl font-semibold md:text-3xl text-[#5541e8]"
           animation="fadeIn"
           by="character"
         >
