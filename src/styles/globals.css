@@ -141,3 +141,22 @@
     transform: translateY(100%); /* Slide completely out of view */
   }
 }
+
+.slick-dots{
+  bottom: -55px !important;
+}
+.custom-dots li button:before {
+  font-size: 18px;
+  color: rgb(139, 139, 243) !important;
+  opacity: 1 !important;
+}
+
+.custom-dots li.slick-active button:before {
+  color: rgb(96, 35, 228) !important;
+  font-size: 18px;
+
+}
+
+.slick-slide{
+  margin: 0 12px;
+}

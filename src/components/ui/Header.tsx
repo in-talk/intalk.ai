@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BorderBeam } from "@/src/components/ui/border-beam";
 import Logo from "./Logo";
 import MobileNav from "./MobileNav";
 import MatrixButton from "./MatrixButton";
@@ -59,7 +58,6 @@ export default function Header() {
               </Link>
             </li>
           </ul>
-          <BorderBeam size={170} duration={15} delay={12} />
         </div>
        <MatrixButton buttonText='Contact Us' onClick={()=> router.push('#contact') }/>
       </div>

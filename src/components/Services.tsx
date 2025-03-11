@@ -10,13 +10,13 @@ export default function Services() {
       </div>
       <div className=" relative flex flex-col  gap-[30px] justify-center items-center md:items-start z-30  w-full md:w-[50%] h-[100%]   rounded-lg  shadow-xl ">
         <TextAnimate
-          className="font-nacelle text-2xl font-semibold md:text-3xl text-[#5541e8]"
+          className="font-nacelle text-2xl font-semibold md:text-3xl text-gray-300"
           animation="fadeIn"
           by="character"
         >
           Always Available 24/7.
         </TextAnimate>
-        <p className="text-indigo-200 text-lg text-center md:text-left md:w-[60%]">
+        <p className="text-gray-200 text-lg text-center md:text-left md:w-[60%]">
           Our AI bots are available 24/7, 365 days a year, ensuring no customer
           is left waiting. Whether it’s after-hours, peak times, or weekends,
           our bots provide instant responses, ensuring consistent customer

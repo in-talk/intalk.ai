@@ -17,7 +17,7 @@ export default function WhyAI() {
           {/* Section header */}
           <div className="mx-auto max-w-3xl py-4 text-center md:py-4">
             <TextAnimate
-              className="font-nacelle text-2xl font-semibold md:text-4xl text-indigo-200"
+              className="font-nacelle text-2xl font-semibold md:text-4xl text-gray-300"
               animation="blurInUp"
               by="word"
             >
@@ -41,14 +41,13 @@ export default function WhyAI() {
                       d="m16.295 5.393 7.528 2.034-4.436 16.412L5.87 20.185l.522-1.93 11.585 3.132 3.392-12.55-5.597-1.514.522-1.93Z"
                     />
                   </svg>
-                  <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  <h3 className="mb-1 font-nacelle text-[1.3rem] font-semibold text-gray-300">
                     Maximizing Profitability
                   </h3>
-                  <p className="text-indigo-200/65">
+                  <p className="text-gray-200 text-md">
                     By implementing AI, businesses can reduce operational costs
                     by eliminating the need for hiring, training, and managing
-                    large human call center teams. Our AI bots help you optimize
-                    resources while increasing overall profitability.
+                    large human call center teams.
                   </p>
                 </article>
               </div>
@@ -66,10 +65,10 @@ export default function WhyAI() {
                     />
                     <path d="M19 6H0v2h17v8H7v-6H5v8h19v-2h-5V6Z" />
                   </svg>
-                  <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  <h3 className="mb-1 font-nacelle text-[1.3rem] font-semibold text-gray-300">
                     Solving HR and Hiring Challenges
                   </h3>
-                  <p className="text-indigo-200/65">
+                  <p className="text-gray-200 text-md">
                     As a SaaS company, we address not just customer service
                     needs but also your human resource problems. Hiring,
                     onboarding, and retaining call center staff can be a major
@@ -79,7 +78,7 @@ export default function WhyAI() {
               </div>
             </div>
 
-            <div className="flex-1 min-w-[375px] md:min-w-[600px] max-w-[700px]">
+            <div className="flex-1 min-w-[375px] md:min-w-[500px] max-w-[600px]">
               <article className="w-full">
                 <Image
                   className="w-full rounded-2xl"
@@ -104,13 +103,12 @@ export default function WhyAI() {
                       d="M13.01 12.508a2.5 2.5 0 0 0-3.502.482L1.797 23.16.203 21.952l7.71-10.17a4.5 4.5 0 1 1 7.172 5.437l-4.84 6.386-1.594-1.209 4.841-6.385a2.5 2.5 0 0 0-.482-3.503Z"
                     />
                   </svg>
-                  <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  <h3 className="mb-1 font-nacelle text-[1.3rem] font-semibold text-gray-300">
                     Consistency and Accuracy
                   </h3>
-                  <p className="text-indigo-200/65">
+                  <p className="text-gray-200 text-md">
                     AI bots maintain a high level of accuracy and consistency in
-                    every interaction. While human agents may be affected by
-                    emotions, fatigue, or stress, AI bots provide a steady,
+                    every interaction. AI bots provide a steady,
                     reliable experience for customers every time they call.
                   </p>
                 </article>
@@ -134,16 +132,15 @@ export default function WhyAI() {
                     />
                     <path d="m16.321 2-.5-.866 1.733-1 .5.866A22 22 0 0 1 21 12c0 3.852-1.017 7.636-2.948 10.97l-.502.865-1.73-1.003.501-.865A19.878 19.878 0 0 0 19 12a20 20 0 0 0-2.679-10Z" />
                   </svg>
-                  <h3 className="mb-1 font-nacelle text-[1rem] font-semibold text-gray-200">
+                  <h3 className="mb-1 font-nacelle text-[1.3rem] font-semibold text-gray-300">
                     Unmatched Efficiency & Scalability
                   </h3>
-                  <p className="text-indigo-200/65">
+                  <p className="text-gray-200 text-md">
                     AI bots can handle thousands of customer inquiries
                     simultaneously without compromising quality or response
-                    time. Whether it’s 10 or 10,000 calls, our AI scales
+                    time. Whether it’s 10 or 10,000 calls, AI scales
                     seamlessly with your business needs—ensuring every customer
-                    interaction is handled swiftly and effectively, without
-                    delays.
+                    interaction is handled swiftly and effectively.
                   </p>
                 </article>
               </div>

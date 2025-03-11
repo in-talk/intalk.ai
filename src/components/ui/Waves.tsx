@@ -17,7 +17,7 @@ function Waves() {
         <h2 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-4 font-nacelle text-3xl font-semibold text-transparent md:text-3xl">
           Streamline Your Customer Support Journey
         </h2>
-        <p className="text-lg text-indigo-200/65">
+        <p className="text-lg text-gray-200">
           Our intuitive and powerful interface lets you start automating
           customer interactions in minutes. Seamlessly integrate our AI bots
           with your existing systems and provide human-like support across

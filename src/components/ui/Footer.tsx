@@ -255,14 +255,14 @@ export default function Footer() {
     // </footer>
 
     <footer>
-      <div className="w-full px-10 py-6 rounded-t-xl rounded-b-0 bg-indigo-500 ">
+      <div className="w-full lg:px-10 mt-20 py-6  bg-gray-900 ">
         <div className="flex flex-col min-[830px]:flex-row items-center justify-between gap-6 pb-5 border-b-2 border-indigo-100">
           <Logo />
-          <ul className="flex flex-col sm:flex-row items-center gap-5 sm:gap-12">
+          <ul className="flex flex-row items-center gap-5 sm:gap-12">
             <li>
               <a
-                href="jaascript:;"
-                className="text-lg font-normal text-gray-800 transition-all duration-300 hover:text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
+                href="/"
+                className="text-lg font-normal transition-all duration-300 text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
               >
                 In Talk
               </a>
@@ -270,31 +270,24 @@ export default function Footer() {
             <li>
               <a
                 href="jaascript:;"
-                className="text-lg font-normal text-gray-800 transition-all duration-300 hover:text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
+                className="text-lg font-normal  transition-all duration-300 text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
               >
                 Services
               </a>
             </li>
             <li>
               <a
-                href="jaascript:;"
-                className="text-lg font-normal text-gray-800 transition-all duration-300 hover:text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
+                href="#whyus"
+                className="text-lg font-normal  transition-all duration-300 text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
               >
-                Features
+                Why Us
               </a>
             </li>
+            
             <li>
               <a
                 href="jaascript:;"
-                className="text-lg font-normal text-gray-800 transition-all duration-300 hover:text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
-              >
-                AI Agents
-              </a>
-            </li>
-            <li>
-              <a
-                href="jaascript:;"
-                className="text-lg font-normal text-gray-800 transition-all duration-300 hover:text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
+                className="text-lg font-normal  transition-all duration-300 text-indigo-200 focus-within:text-indigo-200 focus-within:outline-0"
               >
                 Support
               </a>
@@ -306,7 +299,7 @@ export default function Footer() {
             <li>
               <a
                 href="jaascript:;"
-                className="text-sm font-normal text-gray-800 transition-all duration-300 hover:text-indigo-200 focus-within:text-indigo-600 focus-within:outline-0"
+                className="text-sm font-normal  transition-all duration-300 text-indigo-200 focus-within:text-indigo-600 focus-within:outline-0"
               >
                 Terms
               </a>
@@ -314,7 +307,7 @@ export default function Footer() {
             <li>
               <a
                 href="jaascript:;"
-                className="text-sm font-normal text-gray-800 transition-all duration-300 hover:text-indigo-200 focus-within:text-indigo-600 focus-within:outline-0"
+                className="text-sm font-normal transition-all duration-300 text-indigo-200 focus-within:text-indigo-600 focus-within:outline-0"
               >
                 Privacy
               </a>
@@ -322,13 +315,13 @@ export default function Footer() {
             <li>
               <a
                 href="jaascript:;"
-                className="text-sm font-normal text-gray-800 transition-all duration-300 hover:text-indigo-200 focus-within:text-indigo-600 focus-within:outline-0"
+                className="text-sm font-normal  transition-all duration-300 text-indigo-200 focus-within:text-indigo-600 focus-within:outline-0"
               >
                 Cookies
               </a>
             </li>
           </ul>
-          <div className="flex items-center gap-4 mr-12">
+          <div className="flex items-center gap-4 lg:mr-12">
             <a
               href="javascript:;"
               className="border border-gray-300 p-2 rounded-full aspect-square text-gray-700 transition-all duration-500 hover:text-indigo-600 hover:border-indigo-600 focus-within:outline-0 focus-within:text-indigo-600 focus-within:border-indigo-600"
@@ -392,8 +385,8 @@ export default function Footer() {
                 fill="none"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M15.9329 5.13919C16.5667 5.31036 17.0648 5.80978 17.2332 6.44286C17.5396 7.59178 17.5396 9.99044 17.5396 9.99044C17.5396 9.99044 17.5396 12.3891 17.2332 13.538C17.0625 14.1734 16.5643 14.6729 15.9329 14.8417C14.7869 15.1489 10.1889 15.1489 10.1889 15.1489C10.1889 15.1489 5.5932 15.1489 4.44487 14.8417C3.81106 14.6705 3.3129 14.1711 3.14451 13.538C2.83813 12.3891 2.83813 9.99044 2.83813 9.99044C2.83813 9.99044 2.83813 7.59178 3.14451 6.44286C3.31524 5.80744 3.8134 5.30801 4.44487 5.13919C5.5932 4.83203 10.1889 4.83203 10.1889 4.83203C10.1889 4.83203 14.7869 4.83203 15.9329 5.13919ZM12.5393 9.99044L8.72007 12.2015V7.77936L12.5393 9.99044Z"
                   fill="currentColor"
                 />

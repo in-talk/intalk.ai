@@ -7,7 +7,7 @@ function PlayButton() {
 
   return (
     <div className="flex justify-center items-center ">
-         <div data-aos="fade-up" data-aos-duration="1000" className=" cursor-pointer h-[150px] w-[150px]" onClick={()=>router.push('#callSample')}>
+         <div data-aos="fade-up" data-aos-duration="1000" className=" cursor-pointer h-[100px] w-[100px] lg:h-[150px] lg:w-[150px]" onClick={()=>router.push('#callSample')}>
            <DotLottieReact src="/animations/play.lottie" loop autoplay />
          </div>
     </div>
