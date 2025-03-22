@@ -1,16 +1,8 @@
 import { MorphingText } from "./ui/morphing-text";
 import MatrixButton from "./ui/MatrixButton";
 import PlayButton from "./PlayButton";
-import {
-  CloseButton,
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
 import { useState } from "react";
-import ScheduleDemoForm from "./ScheduleDemoForm";
-import { Cross1Icon } from "@radix-ui/react-icons";
+import DemoDialog from "./DemoDialog";
 
 export default function HeroHome() {
   const [openDemoForm, setOpenDemoForm] = useState(false);
@@ -57,36 +49,7 @@ export default function HeroHome() {
           <PlayButton />
         </div>
       </div>
-      <Dialog
-        open={openDemoForm}
-        onClose={() => setOpenDemoForm(false)}
-        transition
-        className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4  data-[closed]:opacity-0"
-      >
-        {/* <DialogBackdrop className="fixed inset-0 bg-black/30" />{" "} */}
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4">
-            <DialogPanel
-              data-aos="fade-down"
-              data-aos-duration="500"
-              className="w-full max-w-lg rounded-xl bg-white/5 p-6 backdrop-blur-2xl data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-            >
-              <div className="flex items-center justify-between">
-                <DialogTitle
-                  as="h3"
-                  className="text-gray-200 font-nacelle text-3xl font-semibold leading-10 mb-[16px]"
-                >
-                  Send Us A Message
-                </DialogTitle>
-                <CloseButton className="p-2 rounded-sm hover:bg-indigo-500 bg-indigo-700 shadow-sm transition-all duration-800">
-                  <Cross1Icon strokeWidth={2} />
-                </CloseButton>
-              </div>
-              <ScheduleDemoForm />
-            </DialogPanel>
-          </div>
-        </div>
-      </Dialog>
+     <DemoDialog isOpen={openDemoForm} onClose={() => setOpenDemoForm(false)} />
     </section>
   );
 }

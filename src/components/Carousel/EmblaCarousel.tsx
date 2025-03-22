@@ -39,7 +39,7 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
         <div className="embla__container">
           {slides.map((slide,index) => (
             <div className="embla__slide" key={index}>
-              <div className="group w-[300px] h-[300px] text-gray-900  bg-clip-padding backdrop-filter backdrop-blur-sm   cursor-pointer mx-3 p-6 flex flex-col items-center justify-between rounded-2xl   text-center transition-all duration-300 bg-indigo-400 shadow-lg">
+              <div className="group w-[200px] h-[300px] md:w-[250px] md:h-[300px] bg-transparent text-gray-200  bg-clip-padding  p-5 md:p-3  cursor-pointer  flex flex-col items-center justify-between rounded-2xl   text-center transition-all duration-300 ">
                   <img
                     src={slide.image}
                     alt={slide.text2}

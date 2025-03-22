@@ -12,8 +12,8 @@ export default function WhyAI() {
           "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
         )}
       />
-      <div className="mx-auto px-4 sm:px-6 ">
-        <div className=" pt-12 pb-7  md:py-10">
+      <div className="mx-auto pt-12 px-4 sm:px-6 ">
+        <div className="pt-12 pb-7  md:py-10">
           {/* Section header */}
           <div className="mx-auto max-w-3xl py-4 text-center md:py-4">
             <TextAnimate
@@ -25,7 +25,7 @@ export default function WhyAI() {
             </TextAnimate>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center relative z-40 justify-center gap-6 p-6">
+          <div className="flex flex-col md:flex-row items-center relative justify-center gap-6 p-6">
             <div className="flex flex-col gap-6">
               <div className=" p-4 rounded-lg shadow text-center">
                 <article className=" text-left">

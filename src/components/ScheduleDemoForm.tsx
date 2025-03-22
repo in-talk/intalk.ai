@@ -4,15 +4,15 @@ import { toast, Zoom } from "react-toastify";
 import { useClose } from "@headlessui/react";
 
 function ScheduleDemoForm() {
-
-    const close = useClose()
+  const close = useClose();
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    companyName: "",
+    address: "",
     phone: "",
+    inbound_outbound: "",
+    campaignName: "",
     message: "",
-    preferredMethod: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -31,11 +31,12 @@ function ScheduleDemoForm() {
     e.preventDefault();
     setLoading(true);
     const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message,
+      from_name: formData.companyName,
+      from_address: formData.address,
       from_phone: formData.phone,
-      preferredMethod: formData.preferredMethod,
+      inbound_outbound: formData.inbound_outbound,
+      campaignName: formData.campaignName,
+      message: formData.message,
     };
 
     emailjs
@@ -48,11 +49,12 @@ function ScheduleDemoForm() {
       .then(
         (result) => {
           setFormData({
-            name: "",
-            email: "",
-            message: "",
+            companyName: "",
+            address: "",
             phone: "",
-            preferredMethod: "",
+            inbound_outbound: "",
+            campaignName: "",
+            message: "",
           });
           setLoading(false);
           toast.success("Message sent successfully", {
@@ -69,7 +71,7 @@ function ScheduleDemoForm() {
         },
         (error) => {
           setLoading(false);
-          
+
           toast.error("Error sending email", {
             position: "top-center",
             autoClose: 3000,
@@ -83,7 +85,7 @@ function ScheduleDemoForm() {
           });
         }
       );
-      close()
+    close();
   };
 
   return (
@@ -92,15 +94,15 @@ function ScheduleDemoForm() {
         <input
           type="text"
           className="w-full h-12 text-gray-200 placeholder-gray-400  shadow-sm bg-transparent text-lg font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 "
-          placeholder="Name"
-          name="name"
+          placeholder="Company Name"
+          name="companyName"
           onChange={handleChange}
         />
         <input
           type="text"
           className="w-full h-12 text-gray-200 placeholder-gray-400 shadow-sm bg-transparent text-lg font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 "
-          placeholder="Email"
-          name="email"
+          placeholder="Address"
+          name="address"
           onChange={handleChange}
         />
         <input
@@ -112,16 +114,16 @@ function ScheduleDemoForm() {
         />
         <div className="mb-4">
           <h4 className="text-gray-200 text-lg font-nacelle leading-7 mb-4">
-            Preferred method of communication
+            Inbound or Outbound?
           </h4>
           <div className="flex">
             <div className="flex items-center mr-11">
               <input
                 id="radio-group-1"
                 type="radio"
-                name="preferredMethod"
-                value="email"
-                checked={formData.preferredMethod === "email"}
+                name="inbound_outbound"
+                value="inbound"
+                checked={formData.inbound_outbound === "inbound"}
                 onChange={handleChange}
                 className="hidden checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100"
               />
@@ -130,16 +132,16 @@ function ScheduleDemoForm() {
                 className="flex items-center cursor-pointer text-gray-200 text-base font-nacelle leading-6"
               >
                 <span className="border border-gray-300 rounded-full mr-2 w-4 h-4  ml-2 "></span>{" "}
-                Email
+                Inbound
               </label>
             </div>
             <div className="flex items-center">
               <input
                 id="radio-group-2"
                 type="radio"
-                name="preferredMethod"
-                value="phone"
-                checked={formData.preferredMethod === "phone"}
+                name="inbound_outbound"
+                value="outbound"
+                checked={formData.inbound_outbound === "outbound"}
                 onChange={handleChange}
                 className="hidden checked:bg-no-repeat checked:bg-center checked:border-indigo-500 checked:bg-indigo-100"
               />
@@ -148,11 +150,18 @@ function ScheduleDemoForm() {
                 className="flex items-center cursor-pointer text-gray-200 text-base font-nacelle leading-6"
               >
                 <span className="border border-gray-300  rounded-full mr-2 w-4 h-4  ml-2 "></span>{" "}
-                Phone
+                Outbound
               </label>
             </div>
           </div>
         </div>
+        <input
+          type="text"
+          className="w-full h-12 text-gray-200 placeholder-gray-400 bg-transparent text-lg shadow-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 "
+          placeholder="Campaign Name"
+          onChange={handleChange}
+          name="campaignName"
+        />
         <input
           type="text"
           className="w-full h-12 text-gray-200 placeholder-gray-400 bg-transparent text-lg shadow-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none pl-4 "

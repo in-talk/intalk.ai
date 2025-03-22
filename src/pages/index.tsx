@@ -31,10 +31,11 @@ export default function Home() {
       <HeroHome />
       <WhyAI />
       <WhyUs />
-      <AutomateProcess />
       <CallSample />
+      <AutomateProcess />
       <Services />
       <Waves />
+    
       <Cta />
       <ToastContainer />
       <Footer />
