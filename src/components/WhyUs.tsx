@@ -11,31 +11,32 @@ export default function WhyUs() {
     {
       image: "/icons/time_save.svg",
       text1: "24/7",
-      text2: "Support & Availability",
+      text2: "Customer Success Managment",
     },
     {
       image: "/icons/boost.svg",
-      text1: "+200%",
+      text1: "Upto +200%",
       text2: "Growth Potential",
     },
     {
+      image: "/icons/working.svg",
+      text1: "Upto 50%",
+      text2: "Reduction in Manual Work",
+    },
+    {
       image: "/icons/dashboard.svg",
-      text1: "60%",
+      text1: "Upto 60%",
       text2: "Data-Driven Decisions",
     },
     {
       image: "/icons/trends.svg",
-      text1: "95%",
+      text1: "Upto 95%",
       text2: "Precision & Accuracy",
     },
-    {
-      image: "/icons/working.svg",
-      text1: "-50%",
-      text2: "Manual Work",
-    },
+   
     {
       image: "/icons/cost_reduction.svg",
-      text1: "50%",
+      text1: "Upto 50%",
       text2: "Operational Cost Reduction",
     },
   ];
@@ -57,7 +58,7 @@ export default function WhyUs() {
               by="character"
              
             >
-              Why Choose Us?
+              Why Intalk?
             </TextAnimate>
           </div>
           <div className="mx-auto my-[16px] lg:max-w-[65%] pb-[5%] pt-[1%] text-center">
@@ -70,7 +71,7 @@ export default function WhyUs() {
             </h2>
           </div>
 
-          <div className=" mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ">
+          <div className=" mx-auto px-4 sm:px-6 lg:px-8 ">
             {/* <Carousel /> */}
             <EmblaCarousel slides={SLIDES} options={OPTIONS} />
           </div>
