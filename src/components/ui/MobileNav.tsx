@@ -11,7 +11,7 @@ const navigation = [
   { name: "Why AI", href: "#whyAi", current: false },
   { name: "About", href: "#about", current: false },
   { name: "Services", href: "#support", current: false },
-  { name: "Features", href: "#features", current: false },
+  { name: "Experience", href: "#features", current: false },
   { name: "Contact us", href: "#contact", current: false },
 ];
 

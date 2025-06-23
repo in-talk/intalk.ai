@@ -64,14 +64,14 @@ export default function App({ Component, pageProps }: AppProps) {
             operatingSystem: "Web",
             creator: {
               "@type": "Organization",
-              name: "Ai In talk",
+              name: "In talk.AI",
               url: "https://intalk.ai",
               logo: "https://yourwebsite.com/logo.png",
             },
             sameAs: [
               "https://www.facebook.com/intalk",
               "https://www.twitter.com/intalk",
-              "https://www.linkedin.com/company/intalk",
+              "https://www.linkedin.com/company/ai-intalk",
             ],
             mainEntityOfPage: {
               "@type": "WebPage",

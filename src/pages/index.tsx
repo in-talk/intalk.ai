@@ -13,6 +13,7 @@ import CallSample from "../components/CallSample";
 import HeaderV2 from "../components/ui/HeaderV2";
 import WhyUs from "../components/WhyUs";
 import { ToastContainer } from "react-toastify";
+import About from "../components/ui/AboutUs";
 
 export default function Home() {
   useEffect(() => {
@@ -35,9 +36,10 @@ export default function Home() {
       <AutomateProcess />
       <Services />
       <Waves />
-    
+
       <Cta />
       <ToastContainer />
+      <About />
       <Footer />
     </>
   );

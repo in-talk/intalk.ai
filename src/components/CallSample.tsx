@@ -4,7 +4,7 @@ import { TextAnimate } from "./ui/text-animate";
 
 function CallSample() {
   return (
-    <section id="callSample" className="m-5 mb-[50px] lg:mb-5 p-3 lg:p-8 ">
+    <section id="features" className="m-5 mb-[50px] lg:mb-5 p-3 lg:p-8 ">
       <div className="py-6 md:py-12">
         {/* Section header */}
         <div className="mx-auto max-w-3xl py-4 text-center md:py-4">
@@ -30,7 +30,7 @@ function CallSample() {
           <MediaThemeTailwindAudio className="w-80">
             <audio
               slot="media"
-              src="/audios/call.mp3"
+              src="/audios/call_1.wav"
               playsInline
               preload="auto"
             ></audio>

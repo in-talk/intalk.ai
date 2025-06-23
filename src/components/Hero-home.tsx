@@ -25,18 +25,24 @@ export default function HeroHome() {
           {/* Section header */}
           <div className="pb-7 text-center md:pb-20" data-aos="fade-down">
             <h1 className="animate-[gradient_6s_linear_infinite] bg-[linear-gradient(to_right,theme(colors.gray.200),theme(colors.indigo.200),theme(colors.gray.50),theme(colors.indigo.300),theme(colors.gray.200))] bg-[length:200%_auto] bg-clip-text pb-5 font-nacelle text-4xl font-semibold text-transparent md:text-5xl">
-              AI-Driven tools for
+              AI voice bot for Telemarketing Industry
             </h1>
             <MorphingText
-              texts={["Call centers", "Call Agents", "Bots", " Products"]}
+              texts={[
+                "Cloud-based",
+                "Efficiency",
+                "Compatibility",
+                "Consistent",
+                "Precision",
+              ]}
             />
-            <div className="mx-auto md:mt-4 max-w-3xl px-5">
+            {/* <div className="mx-auto md:mt-4 max-w-3xl px-5">
               <p className="mb-8  text-xl md:text-2xl text-gray-200">
                 Revolutionizing Customer Interactions with AI-Powered Calling
                 Bots—Delivering Smart, Human-Like Conversations That Work 24/7
                 to Enhance Customer Satisfaction and Drive Business Growth.
               </p>
-            </div>
+            </div> */}
             <MatrixButton
               buttonText="Schedule a demo"
               onClick={() => setOpenDemoForm(true)}
@@ -49,7 +55,10 @@ export default function HeroHome() {
           <PlayButton />
         </div>
       </div>
-     <DemoDialog isOpen={openDemoForm} onClose={() => setOpenDemoForm(false)} />
+      <DemoDialog
+        isOpen={openDemoForm}
+        onClose={() => setOpenDemoForm(false)}
+      />
     </section>
   );
 }

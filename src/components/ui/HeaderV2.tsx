@@ -18,15 +18,19 @@ function HeaderV2() {
     },
     {
       text: "Why Us",
-      url: "#WhyUs",
+      url: "#whyus",
+    },
+    {
+      text: "Experience",
+      url: "#features",
     },
     {
       text: "Support",
-      url: "#suport",
+      url: "#support",
     },
     {
-      text: "Features",
-      url: "#features",
+      text: "About Us",
+      url: "#about",
     },
   ];
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -135,7 +139,6 @@ function HeaderV2() {
               </li>
             ))}
           </ul>
-          
         </div>
       </header>
       <DemoDialog
