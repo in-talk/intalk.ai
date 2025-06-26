@@ -13,7 +13,10 @@ import CallSample from "../components/CallSample";
 import HeaderV2 from "../components/ui/HeaderV2";
 import WhyUs from "../components/WhyUs";
 import { ToastContainer } from "react-toastify";
-import About from "../components/ui/AboutUs";
+import { OurTeam } from "../components/OurTeam";
+import Pricing from "../components/Pricing";
+import HowItWorks from "../components/HowItWorks";
+import About from "../components/AboutUs";
 
 export default function Home() {
   useEffect(() => {
@@ -33,13 +36,15 @@ export default function Home() {
       <WhyAI />
       <WhyUs />
       <CallSample />
+      <HowItWorks />
       <AutomateProcess />
       <Services />
       <Waves />
-
+      <OurTeam />
+      <Pricing />
       <Cta />
-      <ToastContainer />
       <About />
+      <ToastContainer />
       <Footer />
     </>
   );
