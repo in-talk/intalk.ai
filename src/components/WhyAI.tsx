@@ -19,7 +19,7 @@ export default function WhyAI() {
             <TextAnimate
               className="font-nacelle text-2xl font-semibold md:text-4xl text-gray-300"
               animation="blurInUp"
-              by="word"
+              by="character"
             >
               Why AI is the Future of Call Centers
             </TextAnimate>
