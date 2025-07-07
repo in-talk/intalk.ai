@@ -10,7 +10,7 @@ function CallFlowSolution() {
     <>
       <AccordionTrigger className="w-full text-left px-6 py-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/10 text-white font-semibold transition-all duration-300 shadow-md hover:bg-white/20">
         <h2 className="font-nacelle text-2xl lg:text-3xl font-semibold">
-          🤖 How WE Solve these Challenges!
+          🤖 Our Approach to Solving These Challenges
         </h2>
       </AccordionTrigger>
       <AccordionContent className="pb-40 pt-10  w-full overflow-x-auto">
