@@ -3,21 +3,20 @@ import React from "react";
 
 const teamMembers = [
   {
-    name: "Other Bilal",
-    title: "CEO & Founder",
+    name: "Bilal Ahmed",
+    title: "CEO & Co-Founder",
     description:
-      "Visionary leader with 15+ years of experience in tech innovation.",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    linkedinUrl: "https://www.linkedin.com/in/muhammad-bilal-01123368/",
+      "Seasoned tech expert with 5+ years of experience in software development, specializing in AI and machine learning for top-tier companies.",
+    image: "/images/bilal-ahmed.png",
+    linkedinUrl: "https://www.linkedin.com/in/bilaal-js/",
   },
   {
     name: "Muhammad Bilal",
-    title: "Co-Founder & CTO",
+    title: "CTO & Co-Founder",
     description:
-      "Tech genius with expertise in AI and machine learning technologies.",
+      "Tech genius with 9+ years in software development, mastering AI and machine learning while delivering innovation at top-tier companies.",
     image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+      "https://media.licdn.com/dms/image/v2/D4D03AQECKeSZ6F9iJQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1724495033577?e=1756944000&v=beta&t=aZucqNo8AL_8lTU73mg8CtNhtGrgGqtDdXg4aKmNdXQ",
     linkedinUrl: "https://www.linkedin.com/in/muhammad-bilal-01123368/",
   },
 ];
