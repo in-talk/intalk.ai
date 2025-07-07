@@ -3,7 +3,7 @@ import React from "react";
 
 const teamMembers = [
   {
-    name: "Bilal Ahmed",
+    name: "Bilal A Khatri",
     title: "CEO & Co-Founder",
     description:
       "Seasoned tech expert with 5+ years of experience in software development, specializing in AI and machine learning for top-tier companies.",

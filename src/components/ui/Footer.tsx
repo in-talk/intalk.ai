@@ -77,10 +77,10 @@ export default function Footer() {
               </a>
             </li>
           </ul>
-          <div className="flex items-center gap-4 lg:mr-12">
+          <div className="flex items-center gap-4 lg:mr-24">
             <a
               href="https://www.linkedin.com/company/ai-intalk"
-              className="border border-gray-300 p-2 rounded-full aspect-square text-gray-700 transition-all duration-500 hover:text-indigo-600 hover:border-indigo-600 focus-within:outline-0 focus-within:text-indigo-600 focus-within:border-indigo-600"
+              className="border border-blue-300 p-2 rounded-full aspect-square text-blue-700 transition-all duration-500 hover:text-indigo-600 hover:border-indigo-600 focus-within:outline-0 focus-within:text-indigo-600 focus-within:border-indigo-600"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,9 @@
 function About() {
   return (
-    <div className="sm:flex items-center max-w-screen-xl mx-auto  px-4 py-[20px]">
+    <div
+      id="about"
+      className="sm:flex items-center max-w-screen-xl mx-auto  px-4 py-[20px]"
+    >
       {/* Image Section */}
       <div className="sm:w-1/2 p-6">
         <div className="image object-center text-center">
