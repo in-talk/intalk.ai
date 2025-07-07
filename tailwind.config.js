@@ -150,19 +150,35 @@ module.exports = {
         float: "float 3s ease-in-out infinite",
         "pulse-glow": "pulseGlow 2s ease-in-out infinite",
         "slide-down": "slideDown 0.3s ease-out",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
         float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
         },
         pulseGlow: {
-          "0%, 100%": { opacity: 0.6 },
-          "50%": { opacity: 1 },
+          "0%, 100%": {
+            opacity: 0.6,
+          },
+          "50%": {
+            opacity: 1,
+          },
         },
         slideDown: {
-          "0%": { transform: "translateY(-10%)", opacity: 0 },
-          "100%": { transform: "translateY(0)", opacity: 1 },
+          "0%": {
+            transform: "translateY(-10%)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
         },
         shine: {
           "0%": {
@@ -239,6 +255,22 @@ module.exports = {
           "50%": {
             transform: "scale(1.02)",
             boxShadow: "0 0 20px rgba(102, 126, 234, 0.6)",
+          },
+        },
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
           },
         },
       },
