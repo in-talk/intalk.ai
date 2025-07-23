@@ -40,7 +40,7 @@ export default function Home() {
       <AutomateProcess />
       <Services />
       <Waves />
-      <OurTeam />
+      {/* <OurTeam /> */}
       <Pricing />
       <Cta />
       <About />
