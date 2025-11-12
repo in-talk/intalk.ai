@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, Zoom } from "react-toastify";
 import { useClose } from "@headlessui/react";
-import { Checkbox } from "./ui/Checkbox";
 import { Label } from "./ui/Label";
 
 function ScheduleDemoForm() {
@@ -18,7 +17,7 @@ function ScheduleDemoForm() {
     inbound_outbound: "",
     campaignSelection: "",
     otherCampaign: "",
-    numberOfTestingBoxes: "",
+    numberOfTestingBots: "",
     hasReferral: "",
     referralName: "",
     referralContact: "",
@@ -62,7 +61,7 @@ function ScheduleDemoForm() {
         formData.campaignSelection === "Other"
           ? formData.otherCampaign
           : formData.campaignSelection,
-      testing_boxes: formData.numberOfTestingBoxes,
+      testing_bots: formData.numberOfTestingBots,
       has_referral: formData.hasReferral,
       referral_name: formData.referralName,
       referral_contact: formData.referralContact,
@@ -73,6 +72,9 @@ function ScheduleDemoForm() {
       shift_end_timings: formData.shiftEndTimings,
       ip_address:formData.ip,
       message: formData.message,
+      disclaimer_text: termsCheck ? `By submitting this form I hereby confirm that this inquiry is made
+            voluntarily and independently, and I consent to be contacted by your
+            Company regarding my inquiry.`: 'N/A',
     };
 
     emailjs
@@ -94,7 +96,7 @@ function ScheduleDemoForm() {
             inbound_outbound: "",
             campaignSelection: "",
             otherCampaign: "",
-            numberOfTestingBoxes: "",
+            numberOfTestingBots: "",
             hasReferral: "",
             referralName: "",
             referralContact: "",
@@ -163,7 +165,7 @@ function ScheduleDemoForm() {
           <input
             type="text"
             className="w-full h-11 text-gray-200 placeholder-gray-400 shadow-sm bg-transparent text-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-indigo-400 pl-4 transition-colors"
-            placeholder="Name *"
+            placeholder="Contact Name *"
             name="name"
             value={formData.name}
             onChange={handleChange}
@@ -176,7 +178,7 @@ function ScheduleDemoForm() {
           <input
             type="email"
             className="w-full h-11 text-gray-200 placeholder-gray-400 shadow-sm bg-transparent text-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-indigo-400 pl-4 transition-colors"
-            placeholder="Teams Email *"
+            placeholder="Teams Id/Email *"
             name="teamsEmail"
             value={formData.teamsEmail}
             onChange={handleChange}
@@ -314,8 +316,8 @@ function ScheduleDemoForm() {
           )}
 
           <select
-            name="numberOfTestingBoxes"
-            value={formData.numberOfTestingBoxes}
+            name="numberOfTestingBots"
+            value={formData.numberOfTestingBots}
             onChange={handleChange}
             className="w-full h-11 text-gray-200 text-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-indigo-400 pl-4 pr-10 transition-colors appearance-none cursor-pointer"
             style={{
@@ -328,7 +330,7 @@ function ScheduleDemoForm() {
             required
           >
             <option value="" className="bg-gray-800 text-gray-200">
-              Number of Testing Boxes *
+              Number of Testing Bots *
             </option>
             <option value="5" className="bg-gray-800 text-gray-200">
               5
@@ -443,6 +445,12 @@ function ScheduleDemoForm() {
                 className="bg-gray-800 text-gray-200"
               >
                 Social Media
+              </option>
+              <option
+                value="Social Media"
+                className="bg-gray-800 text-gray-200"
+              >
+                Google Search
               </option>
             </select>
             <div></div>
