@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, Zoom } from "react-toastify";
 import { useClose } from "@headlessui/react";
+import { Checkbox } from "./ui/Checkbox";
+import { Label } from "./ui/Label";
 
 function ScheduleDemoForm() {
   const close = useClose();
@@ -23,14 +25,18 @@ function ScheduleDemoForm() {
     heardAboutUs: "",
     dialerProvider: "",
     voipProvider: "",
-    shiftTimings: "",
-    campaignName: "",
+    shiftStartTimings: "",
+    shiftEndTimings: "",
+    ip:'',
     message: "",
   });
   const [loading, setLoading] = useState(false);
+  const [termsCheck, setTermsCheck] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
 
@@ -52,9 +58,10 @@ function ScheduleDemoForm() {
       address: formData.address,
       phone: formData.phone,
       inbound_outbound: formData.inbound_outbound,
-      campaign_selection: formData.campaignSelection === "Other" 
-        ? formData.otherCampaign 
-        : formData.campaignSelection,
+      campaign_selection:
+        formData.campaignSelection === "Other"
+          ? formData.otherCampaign
+          : formData.campaignSelection,
       testing_boxes: formData.numberOfTestingBoxes,
       has_referral: formData.hasReferral,
       referral_name: formData.referralName,
@@ -62,8 +69,9 @@ function ScheduleDemoForm() {
       heard_about_us: formData.heardAboutUs,
       dialer_provider: formData.dialerProvider,
       voip_provider: formData.voipProvider,
-      shift_timings: formData.shiftTimings,
-      campaign_name: formData.campaignName,
+      shift_start_timings: formData.shiftStartTimings,
+      shift_end_timings: formData.shiftEndTimings,
+      ip_address:formData.ip,
       message: formData.message,
     };
 
@@ -93,8 +101,9 @@ function ScheduleDemoForm() {
             heardAboutUs: "",
             dialerProvider: "",
             voipProvider: "",
-            shiftTimings: "",
-            campaignName: "",
+            shiftStartTimings: "",
+            shiftEndTimings: "",
+            ip:"",
             message: "",
           });
           setLoading(false);
@@ -128,9 +137,18 @@ function ScheduleDemoForm() {
       );
   };
 
+  useEffect(() => {
+    fetch("https://api.ipify.org?format=json")
+      .then((res) => res.json())
+      .then((data) => setFormData({ ...formData, ip: data.ip }));
+
+  }, []);
+
+  console.log('ip',formData.ip)
+
   return (
-    <div className="py-5 rounded-2xl max-h-[75vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
-      <form className="flex flex-col gap-4 px-1" onSubmit={handleSubmit}>
+    <div className="py-5 px-3 rounded-2xl max-h-[63dvh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
+      <form className="flex flex-col gap-2 px-1" onSubmit={handleSubmit}>
         {/* Row 1: Company Name & Name */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <input
@@ -258,12 +276,24 @@ function ScheduleDemoForm() {
             <option value="" className="bg-gray-800 text-gray-200">
               Select Campaign *
             </option>
-            <option value="ACA" className="bg-gray-800 text-gray-200">ACA</option>
-            <option value="FE" className="bg-gray-800 text-gray-200">FE (Final Expense)</option>
-            <option value="Medicare" className="bg-gray-800 text-gray-200">Medicare</option>
-            <option value="CGM" className="bg-gray-800 text-gray-200">CGM</option>
-            <option value="SOLAR" className="bg-gray-800 text-gray-200">SOLAR</option>
-            <option value="Other" className="bg-gray-800 text-gray-200">Other</option>
+            <option value="ACA" className="bg-gray-800 text-gray-200">
+              ACA
+            </option>
+            <option value="FE" className="bg-gray-800 text-gray-200">
+              FE (Final Expense)
+            </option>
+            <option value="Medicare" className="bg-gray-800 text-gray-200">
+              Medicare
+            </option>
+            <option value="CGM" className="bg-gray-800 text-gray-200">
+              CGM
+            </option>
+            <option value="SOLAR" className="bg-gray-800 text-gray-200">
+              SOLAR
+            </option>
+            <option value="Other" className="bg-gray-800 text-gray-200">
+              Other
+            </option>
           </select>
         </div>
 
@@ -300,10 +330,18 @@ function ScheduleDemoForm() {
             <option value="" className="bg-gray-800 text-gray-200">
               Number of Testing Boxes *
             </option>
-            <option value="5" className="bg-gray-800 text-gray-200">5</option>
-            <option value="10" className="bg-gray-800 text-gray-200">10</option>
-            <option value="15" className="bg-gray-800 text-gray-200">15</option>
-            <option value="20" className="bg-gray-800 text-gray-200">20</option>
+            <option value="5" className="bg-gray-800 text-gray-200">
+              5
+            </option>
+            <option value="10" className="bg-gray-800 text-gray-200">
+              10
+            </option>
+            <option value="15" className="bg-gray-800 text-gray-200">
+              15
+            </option>
+            <option value="20" className="bg-gray-800 text-gray-200">
+              20
+            </option>
           </select>
         </div>
 
@@ -394,9 +432,18 @@ function ScheduleDemoForm() {
               <option value="" className="bg-gray-800 text-gray-200">
                 Where did you hear about us? *
               </option>
-              <option value="LinkedIn" className="bg-gray-800 text-gray-200">LinkedIn</option>
-              <option value="Facebook" className="bg-gray-800 text-gray-200">Facebook</option>
-              <option value="Social Media" className="bg-gray-800 text-gray-200">Social Media</option>
+              <option value="LinkedIn" className="bg-gray-800 text-gray-200">
+                LinkedIn
+              </option>
+              <option value="Facebook" className="bg-gray-800 text-gray-200">
+                Facebook
+              </option>
+              <option
+                value="Social Media"
+                className="bg-gray-800 text-gray-200"
+              >
+                Social Media
+              </option>
             </select>
             <div></div>
           </div>
@@ -424,21 +471,36 @@ function ScheduleDemoForm() {
 
         {/* Row 9: Shift Timings & Campaign Name */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <input
-            type="time"
-            className="w-full h-11 text-gray-200 placeholder-gray-400 shadow-sm bg-transparent text-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-indigo-400 pl-4 pr-4 transition-colors"
-            name="shiftTimings"
-            value={formData.shiftTimings}
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            className="w-full h-11 text-gray-200 placeholder-gray-400 bg-transparent text-sm shadow-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-indigo-400 pl-4 transition-colors"
-            placeholder="Campaign Name"
-            onChange={handleChange}
-            name="campaignName"
-            value={formData.campaignName}
-          />
+          <div>
+            <label
+              className="pl-2 text-gray-200 text-sm"
+              htmlFor="shiftTimings"
+            >
+              Shift Start Time
+            </label>
+            <input
+              type="time"
+              className="w-full h-11 text-gray-200 placeholder-gray-400 shadow-sm bg-transparent text-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-indigo-400 pl-4 pr-4 transition-colors"
+              name="shiftStartTimings"
+              value={formData.shiftStartTimings}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label
+              className="pl-2 text-gray-200 text-sm"
+              htmlFor="shiftEndTimings"
+            >
+              Shift End Time
+            </label>
+            <input
+              type="time"
+              className="w-full h-11 text-gray-200 placeholder-gray-400 shadow-sm bg-transparent text-sm font-nacelle leading-7 rounded-full border border-gray-200 focus:outline-none focus:border-indigo-400 pl-4 pr-4 transition-colors"
+              name="shiftEndTimings"
+              value={formData.shiftEndTimings}
+              onChange={handleChange}
+            />
+          </div>
         </div>
 
         {/* Row 10: Message */}
@@ -451,10 +513,24 @@ function ScheduleDemoForm() {
           rows={2}
         />
 
-        {/* Submit Button */}
+        <div className="flex max-w-md items-center gap-3 my-5">
+          <input
+            type="checkbox"
+            id="terms"
+            checked={termsCheck}
+            onChange={() => setTermsCheck((prev) => !prev)}
+          />
+          <Label htmlFor="terms" className="text-gray-300">
+            By submitting this form I hereby confirm that this inquiry is made
+            voluntarily and independently, and I consent to be contacted by your
+            Company regarding my inquiry.
+          </Label>
+        </div>
+
         <button
           type="submit"
-          disabled={loading}
+          title={!termsCheck ? "Please check the checkbox to submit form" : ""}
+          disabled={loading || !termsCheck}
           className="w-full h-11 text-white text-sm font-semibold leading-6 rounded-full transition-all duration-300 hover:bg-indigo-600 bg-indigo-700 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {loading ? "Sending..." : "Send"}
