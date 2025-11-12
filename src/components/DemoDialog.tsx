@@ -15,7 +15,7 @@ const DemoDialog: React.FC<DemoDialogProps> = ({ isOpen, onClose }) => {
       transition
       className="fixed inset-0 flex w-screen items-center justify-center bg-black/30 p-4  data-[closed]:opacity-0"
     >
-      <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div className="fixed inset-0 z-10 w-screen overflow-y-hidden">
         <div className="flex min-h-full items-center justify-center p-4">
           <DialogPanel
             data-aos="fade-down"
