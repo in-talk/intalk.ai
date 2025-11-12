@@ -20,7 +20,7 @@ const DemoDialog: React.FC<DemoDialogProps> = ({ isOpen, onClose }) => {
           <DialogPanel
             data-aos="fade-down"
             data-aos-duration="500"
-            className="w-full max-w-lg rounded-xl bg-white/5 p-6 backdrop-blur-2xl data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            className="w-full max-w-3xl rounded-xl bg-white/5 p-6 backdrop-blur-2xl data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
           >
             <div className="flex items-center justify-between">
               <DialogTitle
