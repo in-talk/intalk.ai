@@ -26,7 +26,7 @@ function ScheduleDemoForm() {
     voipProvider: "",
     shiftStartTimings: "",
     shiftEndTimings: "",
-    ip:'',
+    ip: "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
@@ -70,11 +70,11 @@ function ScheduleDemoForm() {
       voip_provider: formData.voipProvider,
       shift_start_timings: formData.shiftStartTimings,
       shift_end_timings: formData.shiftEndTimings,
-      ip_address:formData.ip,
+      ip_address: formData.ip,
       message: formData.message,
-      disclaimer_text: termsCheck ? `By submitting this form I hereby confirm that this inquiry is made
-            voluntarily and independently, and I consent to be contacted by your
-            Company regarding my inquiry.`: 'N/A',
+      disclaimer_text: termsCheck
+        ? `By submitting this form I hereby confirm that this inquiry is made voluntarily and independently, and I consent to be contacted by your Company regarding my inquiry.`
+        : "N/A",
     };
 
     emailjs
@@ -105,7 +105,7 @@ function ScheduleDemoForm() {
             voipProvider: "",
             shiftStartTimings: "",
             shiftEndTimings: "",
-            ip:"",
+            ip: "",
             message: "",
           });
           setLoading(false);
@@ -143,10 +143,9 @@ function ScheduleDemoForm() {
     fetch("https://api.ipify.org?format=json")
       .then((res) => res.json())
       .then((data) => setFormData({ ...formData, ip: data.ip }));
-
   }, []);
 
-  console.log('ip',formData.ip)
+  console.log("ip", formData.ip);
 
   return (
     <div className="py-5 px-3 rounded-2xl max-h-[63dvh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
