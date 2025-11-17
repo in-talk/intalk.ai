@@ -27,7 +27,7 @@ function ScheduleDemoForm() {
     shiftStartTimings: "",
     shiftEndTimings: "",
     ip: "",
-    message: "",
+    // message: "",
   });
   const [loading, setLoading] = useState(false);
   const [termsCheck, setTermsCheck] = useState(false);
@@ -71,7 +71,7 @@ function ScheduleDemoForm() {
       shift_start_timings: formData.shiftStartTimings,
       shift_end_timings: formData.shiftEndTimings,
       ip_address: formData.ip,
-      message: formData.message,
+      // message: formData.message,
       disclaimer_text: termsCheck
         ? `By submitting this form I hereby confirm that this inquiry is made voluntarily and independently, and I consent to be contacted by your Company regarding my inquiry.`
         : "N/A",
@@ -106,7 +106,7 @@ function ScheduleDemoForm() {
             shiftStartTimings: "",
             shiftEndTimings: "",
             ip: "",
-            message: "",
+            // message: "",
           });
           setLoading(false);
           toast.success("Message sent successfully", {
@@ -510,7 +510,7 @@ function ScheduleDemoForm() {
           </div>
         </div>
 
-        {/* Row 10: Message */}
+        {/* Row 10: Message 
         <textarea
           className="w-full min-h-20 text-gray-200 placeholder-gray-400 bg-transparent text-sm shadow-sm font-nacelle leading-6 rounded-2xl border border-gray-200 focus:outline-none focus:border-indigo-400 p-3 transition-colors resize-y"
           placeholder="Message"
@@ -518,7 +518,7 @@ function ScheduleDemoForm() {
           name="message"
           value={formData.message}
           rows={2}
-        />
+        />*/}
 
         <div className="flex max-w-md items-center gap-3 my-5">
           <input
